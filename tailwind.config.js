@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Poppins: "'Poppins', sans-serif",
+        poppins: ['Poppins', 'sans-serif'], // Use an array instead of a string
       },
     },
   },
