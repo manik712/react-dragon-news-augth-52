@@ -1,11 +1,22 @@
+/* eslint-disable no-unused-vars */
 import { Form, Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
+  const {signIn} = useContext(AuthContext)
   const handleLogin = (event) => {
     event.preventDefault();
-    const form = new FormData(event.target);
-    console.log(form.get("email"));
+    const form = new FormData(event.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
+    signIn(email, password)
+    .then(result=>{
+      console.log(result.user);
+    })
+    .catch(err => {console.error(err);});
   };
 
   return (
