@@ -14,7 +14,7 @@ const News = () => {
        <div className="grid md:grid-cols-4">
 
          <div className="col-span-3">
-    
+           <h4 >news details</h4>
          </div>
 
           <div className="">
